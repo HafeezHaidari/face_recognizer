@@ -6,19 +6,20 @@ import pickle
 import numpy as np
 from face_recognizer import NeuralNetwork
 
-'''
-Initialize the neural network and load weights and biases from the .pkl file
-'''
+
 def initialize():
+    '''
+    Initialize the neural network and load weights and biases from the .pkl file
+    '''
     neural_network = NeuralNetwork(128*128, 8192, 4096, 1024, 512, 1)
     neural_network.load_model('test_model.pkl')
     return neural_network
 
-'''
-Define the function recognize_face that takes the neural network and an image as input and returns the probability of the image being a face
-'''
+
 def recognize_face(nn, image):
-    
+    '''
+    Define the function recognize_face that takes the neural network and an image as input and returns the probability of the image being a face
+    '''
     preprocess_image = image
     output = nn.forward_prop(preprocess_image)
     prediction = nn.get_predictions()
@@ -26,10 +27,11 @@ def recognize_face(nn, image):
     
     return probability
 
-'''
-Main function, intitializes the neural network, loads the face cascade and starts the video capture
-'''
+
 def main():
+    '''
+    Main function, intitializes the neural network, loads the face cascade and starts the video capture
+    '''
     # Initialize the neural network and the model for face detection
     neural_network = initialize()
     face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
