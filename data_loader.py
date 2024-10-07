@@ -1,10 +1,11 @@
 import pandas as pd
 import numpy as np
 
-'''
-Define the DataLoader class that reads the data from the csv file and splits it into training and development sets
-'''
+
 class DataLoader:
+    '''
+    Define the DataLoader class that reads the data from the csv file and splits it into training and development sets
+    '''
     # Initialize the DataLoader class
     def __init__(self, path):
         my_list = []
