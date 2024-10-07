@@ -5,10 +5,11 @@ import numpy as np
 import pickle
 import data_loader
 
-'''
-Define the NeuralNetwork class with fixed architecture
-'''
+
 class NeuralNetwork:
+    '''
+    Define the NeuralNetwork class with fixed architecture
+    '''
     def __init__(self, input_size, hidden_size1, hidden_size2, hidden_size3, hidden_size4, output_size, alpha=0.01, lambd=0.01):
         # He initialization for weights
         self.W1 = np.random.randn(hidden_size1, input_size) * np.sqrt(2. / input_size)
