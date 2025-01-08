@@ -28,7 +28,7 @@ def vid_to_pics(vid_path, pics_dir):
 
 def convert_and_resize_image(image_path, output_path, size):
   """
-  Convert an image to grayscale and resize it to a given resolution.
+  Convert an image to grayscale and resize it to a given resolution. Used inside process_images_in_folder()
   """
   image = Image.open(image_path)
   grayscale_image = image.convert('L')
@@ -51,7 +51,7 @@ def process_images_in_folder(input_folder, output_folder, size):
 
 def image_to_flattened_array(image_path):
   '''
-  Turn an image into a 1D vector
+  Turn an image into a 1D vector. Used inside process_images_in_folder()
   '''
   image = Image.open(image_path)
   image_array = np.array(image)
